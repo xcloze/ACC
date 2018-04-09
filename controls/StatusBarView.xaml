@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="JuYuan.controls.StatusBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JuYuan.controls"
+             xmlns:Controls="clr-namespace:ImageButton.Controls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="1024">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="CopyrightGrid" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="StateLogo" Grid.Column="0" Width="24" Height="22" Source="{DynamicResource StatusLogo}" Margin="20,0,0,0"/>
+            <TextBlock x:Name="CopyrightText" Grid.Column="1" FontSize="16" Width="Auto" Height="Auto" Text="成都天钥科技有限公司版权所有" Margin="10,0,0,0"/>
+            <TextBlock x:Name="TelText" Grid.Column="2" FontSize="16" Width="Auto" Height="Auto" Text="联系电话：028-85127792" Margin="15,0,0,0"/>
+        </Grid>
+
+        <Controls:ImageButton x:Name="HelpButton" x:FieldModifier="public" Style="{DynamicResource ButtonStyleHelp}" Grid.Column="1" Margin="0"/>
+
+    </Grid>
+</UserControl>

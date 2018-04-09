@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <ControlList type="System.Windows.Forms.Panel" name="panel1" father="" use="True" x="103" y="30" width="801" height="600">
+    <Controls type="System.Windows.Forms.Panel" name="panel_list" father="panel1" use="True" x="0" y="0" width="400" height="600">
+      <control type="System.Windows.Forms.PictureBox" name="userControl_list" father="panel_list" use="True" x="20" y="50" width="350" height="525" />
+      <control type="System.Windows.Forms.Label" name="label_list_title" father="panel_list" use="True" x="35" y="15" width="136" height="21" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_list" father="panel_list" use="True" x="10" y="10" width="22" height="34" />
+    </Controls>
+    <Controls type="System.Windows.Forms.Panel" name="panel_src" father="panel1" use="True" x="400" y="0" width="400" height="600">
+      <control type="System.Windows.Forms.PictureBox" name="webBrowser_src" father="panel_src" use="True" x="9" y="50" width="380" height="538" />
+      <control type="System.Windows.Forms.Label" name="label_src_title" father="panel_src" use="True" x="35" y="15" width="94" height="21" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_src" father="panel_src" use="True" x="10" y="10" width="22" height="34" />
+    </Controls>
+    <Controls type="System.Windows.Forms.Panel" name="panel_ad" father="panel1" use="False" x="0" y="0" width="400" height="300">
+      <control type="System.Windows.Forms.PictureBox" name="medio_ad" father="panel_ad" use="False" x="5" y="5" width="390" height="290" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_ad" father="panel_ad" use="False" x="5" y="5" width="390" height="290" />
+      <control type="System.Windows.Forms.PictureBox" name="webBrowser_ad" father="panel_ad" use="False" x="0" y="0" width="400" height="300" />
+      <control type="System.Windows.Forms.Label" name="label_ad_info" father="panel_ad" use="False" x="10" y="10" width="380" height="280" />
+    </Controls>
+    <Controls type="System.Windows.Forms.Panel" name="panel_goods" father="panel1" use="False" x="0" y="300" width="400" height="300">
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_goods_info" father="panel_goods" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.Label" name="label_goods_list" father="panel_goods" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.PictureBox" name="webBrowser_goods" father="panel_goods" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.Label" name="label_goods" father="panel_goods" use="False" x="35" y="15" width="94" height="21" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_goods" father="panel_goods" use="False" x="10" y="10" width="22" height="34" />
+    </Controls>
+    <Controls type="System.Windows.Forms.Panel" name="panel_about" father="panel1" use="True" x="400" y="300" width="400" height="300">
+      <control type="System.Windows.Forms.Label" name="label_about" father="panel_about" use="True" x="35" y="15" width="94" height="21" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_about" father="panel_about" use="True" x="10" y="10" width="22" height="34" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_about_info" father="panel_about" use="True" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.Label" name="label_about_info" father="panel_about" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.PictureBox" name="webBrowser_about" father="panel_about" use="False" x="9" y="50" width="380" height="240" />
+    </Controls>
+    <Controls type="System.Windows.Forms.Panel" name="panel_news" father="panel1" use="True" x="400" y="0" width="400" height="300">
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_news_info" father="panel_news" use="True" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.Label" name="label_news_list" father="panel_news" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.PictureBox" name="webBrowser_news" father="panel_news" use="False" x="9" y="50" width="380" height="240" />
+      <control type="System.Windows.Forms.Label" name="label_news" father="panel_news" use="True" x="35" y="15" width="94" height="21" />
+      <control type="System.Windows.Forms.PictureBox" name="pictureBox_news" father="panel_news" use="True" x="10" y="10" width="22" height="34" />
+    </Controls>
+  </ControlList>
+</Config>

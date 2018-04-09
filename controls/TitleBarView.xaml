@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="JuYuan.controls.TitleBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JuYuan.controls" 
+             xmlns:Controls="clr-namespace:ImageButton.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="1024">
+    <Grid x:Name="LayoutRoot" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="LogoPic" Grid.Column="0" Width="145" Height="35" Source="{DynamicResource LogoIcon1}"/>
+        <Rectangle Grid.Column="1" Fill="#1E7AB3" />
+
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="440"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="AppTitle" Grid.Column="0" Foreground="{DynamicResource TitleFontColor}" FontSize="22" Text="溯源一体收银系统" Width="Auto" Margin="15,0,0,0"/>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="113"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="CurrentAdminPic" Grid.Column="0" Width="26" Height="26" Source="{DynamicResource CurrentAdminPic}"/>
+                <TextBlock x:Name="CurrentAdminName" Grid.Column="1" Foreground="{DynamicResource TitleFontColor}" FontSize="16" Width="Auto" Height="Auto" Margin="10,0,0,0" Text="admin"/>
+                <TextBlock x:Name="TitleTime" Grid.Column="2" Foreground="{DynamicResource TitleFontColor}" FontSize="16" Width="Auto" Height="Auto" Margin="10,0,10,0" Text="星期二 2017-06-13 14:29:55"/>
+                <Controls:ImageButton x:Name="QuitButton" Style="{DynamicResource ButtonStyleQuit}" Grid.Column="3" Margin="0"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
