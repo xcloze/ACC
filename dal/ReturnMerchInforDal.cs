@@ -10,9 +10,7 @@ using Model.model;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 退货信息数据处理
-    /// </summary>
+   
     class ReturnMerchInforDal : MySqlUtils
     {
         public List<ui.ReturnMerchRecord> QueryReturnMerchRecord(string memberId, string st, string et, string opera)
