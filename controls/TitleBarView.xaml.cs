@@ -37,7 +37,7 @@ namespace JuYuan.controls
         private void InitTimer()
         {
             ShowTimer = new System.Windows.Threading.DispatcherTimer();
-            ShowTimer.Tick += new EventHandler(ShowCurTimer);//起个Timer一直获取当前时间
+            ShowTimer.Tick += new EventHandler(ShowCurTimer);
             ShowTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             ShowTimer.Start();
         }
