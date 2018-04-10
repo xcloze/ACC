@@ -1,2 +1,2 @@
 # ACC
-基于区块链的DAPP开发
+DAPP development based on block chain
