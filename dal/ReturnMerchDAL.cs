@@ -10,9 +10,7 @@ using Model.model;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 退货商品数据处理
-    /// </summary>
+   
     class ReturnMerchDAL : MySqlUtils
     {
       
