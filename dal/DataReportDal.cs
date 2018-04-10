@@ -13,7 +13,7 @@ namespace JuYuan.dal
 {
     class DataReportDal:MySqlUtils
     {
-        // 查询消费商品明细
+      
         public List<DataReportConsumeGoods> QueryConsumeGoods(string begin, string end, string content)
         {
             List<DataReportConsumeGoods> ret = new List<DataReportConsumeGoods>();
@@ -47,7 +47,7 @@ namespace JuYuan.dal
                         ret.Add(goods);
                 }
             }
-            // todo 退货逻辑
+
             if (content != null && content != "")
                 ds = ExecuteDataSet(@"select sales_return.dt, sales_return.return_mode, goods_return.goods_id, goods_return.num, goods.name, goods.ean,goods_return.return_value, goods_return.uuid,
                     sales_return.operator_id ,goods.code, goods.units , goods_return.return_id 
@@ -85,8 +85,7 @@ namespace JuYuan.dal
             DataSet ds = new DataSet();
             DataSet return_dt = new DataSet();
 
-            //张宇
-            // 现金
+        
             ds = ExecuteDataSet(@"SELECT total_amount , pay_mode from sales where (dt  BETWEEN @start_time and @end_time)",
                 new MySqlParameter("@start_time", s_time),
                 new MySqlParameter("@end_time", e_time));
@@ -195,7 +194,6 @@ namespace JuYuan.dal
         {
             DataReportConsumeGoods goods = new DataReportConsumeGoods();
 
-            // 构造数据
             goods.ID = (string)dr["order_id"];
             if (!string.IsNullOrEmpty(dr["code"].ToString()))
                 goods.GoodsID = (string)dr["code"];
@@ -231,7 +229,6 @@ namespace JuYuan.dal
         {
             DataReportConsumeGoods goods = new DataReportConsumeGoods();
 
-            // 构造数据
             goods.ID = (string)dr["return_id"];
             goods.PayType = "现金";
             if (!string.IsNullOrEmpty(dr["code"].ToString()))
@@ -286,7 +283,6 @@ namespace JuYuan.dal
                 }
             }
 
-            // 暂时未处理退货 todo*
 
             return list;
         }
@@ -299,7 +295,7 @@ namespace JuYuan.dal
             List<StockSellInventory> data_list = new List<StockSellInventory>();
             Child2ParentGoods();
 
-            // 期前库存
+
             Dictionary<string, GoodsStock> periodDict = QueryAllGoodsStockByTime(st);           // 期前
             Dictionary<string, GoodsStock> breakageDict = QueryAllGoodsBreakage(st, et);        // 报损
             Dictionary<string, GoodsStock> callOutDict = QueryAllGoodsCallOut(st, et);          // 调出
@@ -386,11 +382,7 @@ namespace JuYuan.dal
             child2parent = dal_goods.GetChild2ParentGoodsInfo(out ID2goods_dict);
         }
 
-        /// <summary>
-        /// 计算某一时刻的库存量
-        /// </summary>
-        /// <param name="t"></param>
-        /// <returns></returns>
+
         private Dictionary<string, GoodsStock> QueryAllGoodsStockByTime(string t)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
@@ -495,12 +487,6 @@ namespace JuYuan.dal
             return id2Stock;
         }
 
-        /// <summary>
-        /// 报损货物统计 盘点出库
-        /// </summary>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
         private Dictionary<string, GoodsStock> QueryAllGoodsBreakage(string st, string et)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
@@ -543,7 +529,6 @@ namespace JuYuan.dal
                         continue;
                     }
 
-                    // 非关联商品 或 父商品
                     if (ID2goods_dict.ContainsKey(goods_id))
                     {
                         if (id2Stock.ContainsKey(goods_id))
@@ -568,12 +553,7 @@ namespace JuYuan.dal
             return id2Stock;
         }
 
-        /// <summary>
-        /// 调出货物统计
-        /// </summary>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
+
         private Dictionary<string, GoodsStock> QueryAllGoodsCallOut(string st, string et)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
@@ -617,7 +597,7 @@ namespace JuYuan.dal
                         continue;
                     }
 
-                    // 非关联商品 或 父商品
+
                     if (ID2goods_dict.ContainsKey(goods_id))
                     {
                         if (id2Stock.ContainsKey(goods_id))
@@ -642,12 +622,6 @@ namespace JuYuan.dal
             return id2Stock;
         }
 
-        /// <summary>
-        /// 调入货物统计
-        /// </summary>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
         private Dictionary<string, GoodsStock> QueryAllGoodsCallIn(string st, string et)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
@@ -691,7 +665,7 @@ namespace JuYuan.dal
                         continue;
                     }
 
-                    // 非关联商品 或 父商品
+
                     if (ID2goods_dict.ContainsKey(goods_id))
                     {
                         if (id2Stock.ContainsKey(goods_id))
@@ -717,12 +691,6 @@ namespace JuYuan.dal
         }
 
 
-        /// <summary>
-        /// 进货统计
-        /// </summary>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
         private Dictionary<string, GoodsStock> QueryAllGoodsReplenish(string st, string et)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
@@ -748,9 +716,9 @@ namespace JuYuan.dal
                 {
                     string goods_id = dt.Rows[i]["goods_id"].ToString();
 
-                    if (ID2goods_dict.ContainsKey(goods_id) && child2parent.ContainsKey(goods_id))                 // 关联商品 子商品切换回父商品
+                    if (ID2goods_dict.ContainsKey(goods_id) && child2parent.ContainsKey(goods_id))               
                     {
-                        if (id2Stock.ContainsKey(child2parent[goods_id]))   // 已经存在父商品
+                        if (id2Stock.ContainsKey(child2parent[goods_id]))  
                         {
                             id2Stock[child2parent[goods_id]].Num += Convert.ToDecimal(dt.Rows[i]["sum_num"]) / ID2goods_dict[goods_id].SplitNum;
                             id2Stock[child2parent[goods_id]].CostAmount += Convert.ToDecimal(dt.Rows[i]["total_money"]);
@@ -766,7 +734,6 @@ namespace JuYuan.dal
                         continue;
                     }
 
-                    // 非关联商品 或 父商品
                     if (ID2goods_dict.ContainsKey(goods_id))
                     {
                         if (id2Stock.ContainsKey(goods_id))
@@ -791,17 +758,11 @@ namespace JuYuan.dal
             return id2Stock;
         }
 
-        /// <summary>
-        /// 时间段内 销售商品情况
-        /// </summary>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
+
         private Dictionary<string, GoodsStock> QueryAllGoodsSellInfoByTime(string st, string et)
         {
             Dictionary<string, GoodsStock> id2Stock = new Dictionary<string, GoodsStock>();
 
-            // 销售统计
             DataTable dt = ExecuteDataTable(@"
                             SELECT
                             	sales_goods.goods_id,
@@ -826,9 +787,9 @@ namespace JuYuan.dal
             {
                 string goods_id = dt.Rows[i]["goods_id"].ToString();
 
-                if (ID2goods_dict.ContainsKey(goods_id) && child2parent.ContainsKey(goods_id))                 // 关联商品 子商品切换回父商品
+                if (ID2goods_dict.ContainsKey(goods_id) && child2parent.ContainsKey(goods_id))               
                 {
-                    if (id2Stock.ContainsKey(child2parent[goods_id]))   // 已经存在父商品
+                    if (id2Stock.ContainsKey(child2parent[goods_id]))   
                     {
                         id2Stock[child2parent[goods_id]].Num += Convert.ToDecimal(dt.Rows[i]["total_num"]) / ID2goods_dict[goods_id].SplitNum;
                         id2Stock[child2parent[goods_id]].ActulSaleAmount += Convert.ToDecimal(dt.Rows[i]["total_money"]);
@@ -847,7 +808,6 @@ namespace JuYuan.dal
                     continue;
                 }
 
-                // 非关联商品 或 父商品
                 if (ID2goods_dict.ContainsKey(goods_id))
                 {
                     if (id2Stock.ContainsKey(goods_id))
@@ -870,7 +830,6 @@ namespace JuYuan.dal
                 }
             }
 
-            // 退货统计
             DataTable ret_dt = ExecuteDataTable(@"
                             SELECT
                             	goods_return.goods_id,
@@ -909,7 +868,6 @@ namespace JuYuan.dal
                         id2Stock[goods_id].CostAmount -= Convert.ToDecimal(ret_dt.Rows[i]["cost_money"]);
                     }
 
-                    // todo 可能需要处理前一天销售 当天未退货情况
                 }
             }
 
@@ -941,7 +899,6 @@ namespace JuYuan.dal
             if (!string.IsNullOrEmpty(dr["dt"].ToString()))
                 goods.Date = ((DateTime)dr["dt"]).ToString(@"yyyy-MM-dd HH:mm:ss");
 
-            // 新增字段
             if (!string.IsNullOrEmpty(dr["ean"].ToString()))
                 goods.Ean = dr["ean"].ToString();
             if (!string.IsNullOrEmpty(dr["vip_name"].ToString()))
