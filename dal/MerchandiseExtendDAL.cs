@@ -8,18 +8,11 @@ using JuYuan.ui;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 商品扩展信息
-    /// </summary>
+  
     class MerchandiseExtendDAL : MySqlUtils
     {
        
-        /// <summary>
-        /// 根据 商品编号/名称 和 类型 检索商品信息及扩展信息
-        /// </summary>
-        /// <param name="content"></param>
-        /// <param name="cagegoryID"></param>
-        /// <returns></returns>
+        
         public List<MerchandiseLabelData> QueryMerchandise(string content, string cagegoryID)
         {
             DataSet ds;
@@ -89,11 +82,7 @@ namespace JuYuan.dal
             return data;
         }
 
-        /// <summary>
-        /// 检测是否存在指定商品编号的扩展信息
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+      
         public int ExsitMerchanExtend(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -102,11 +91,6 @@ namespace JuYuan.dal
             return Convert.ToInt32(ExecuteScalar("select count(*) from goods_info_ext where goods_id =@spid", new MySqlParameter("@spid", id)));
         }
 
-        /// <summary>
-        /// 更新商品扩展信息
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
         public int UpdateMerchExtend(MerchandiseExtend data)
         {
             if (null == data)
