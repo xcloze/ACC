@@ -7,14 +7,14 @@ using System.Windows.Media;
 namespace CustomCheckBox.controls
 {
     /// <summary>
-    /// BulletCheckBox 交互逻辑
+    /// BulletCheckBox
     /// </summary>
     public class BulletCheckBox : CheckBox
     {
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
             "Text", typeof(string), typeof(BulletCheckBox), new PropertyMetadata("Off"));
         /// <summary>
-        /// 默认文本（未选中）
+        /// 
         /// </summary>
         public string Text
         {
@@ -25,7 +25,7 @@ namespace CustomCheckBox.controls
         public static readonly DependencyProperty CheckedTextProperty = DependencyProperty.Register(
             "CheckedText", typeof(string), typeof(BulletCheckBox), new PropertyMetadata("On"));
         /// <summary>
-        /// 选中状态文本
+        /// 
         /// </summary>
         public string CheckedText
         {
@@ -36,7 +36,7 @@ namespace CustomCheckBox.controls
         public static readonly DependencyProperty CheckedForegroundProperty =
             DependencyProperty.Register("CheckedForeground", typeof(Brush), typeof(BulletCheckBox), new PropertyMetadata(Brushes.WhiteSmoke));
         /// <summary>
-        /// 选中状态前景样式
+        /// 
         /// </summary>
         public Brush CheckedForeground
         {
@@ -47,7 +47,7 @@ namespace CustomCheckBox.controls
         public static readonly DependencyProperty CheckedBackgroundProperty =
             DependencyProperty.Register("CheckedBackground", typeof(Brush), typeof(BulletCheckBox), new PropertyMetadata(Brushes.LimeGreen));
         /// <summary>
-        /// 选中状态背景色
+        /// 
         /// </summary>
         public Brush CheckedBackground
         {
