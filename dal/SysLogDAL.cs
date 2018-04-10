@@ -17,9 +17,7 @@ namespace JuYuan.dal
         public DateTime DT { get; set; }
     }
 
-    /// <summary>
-    /// 日志数据操作
-    /// </summary>
+   
     class OperationLogDAL:MySqlUtils
     {
        
