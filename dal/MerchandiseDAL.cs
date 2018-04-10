@@ -8,9 +8,7 @@ using MySql.Data.MySqlClient;
 using mysqlApp.utils;
 using JuYuan.ui;
 using JuYuan.ui.Misc;
-/**
-*商品信息数据库操作类
-*/
+
 namespace JuYuan.dal
 {
     
@@ -60,10 +58,7 @@ namespace JuYuan.dal
             return data_list;
         }
 
-        /// <summary>
-        /// 关联商品 goodsID  child to parent
-        /// </summary>
-        /// <returns></returns>
+ 
         public Dictionary<string, string> GetChild2ParentGoodsInfo(out Dictionary<string, GoodsBase> ID2goods_dict)
         {
             Dictionary<string, string> child2parent = new Dictionary<string, string>();
@@ -91,10 +86,10 @@ namespace JuYuan.dal
                     goods.SplitNum = Convert.ToDecimal(dt.Rows[i]["product_num"]);
                     goods.SellState = (int)dt.Rows[i]["sell_status"];
 
-                    ID2goods_dict.Add(goods.GoodsID, goods);                    // goods_id 关联商品基础信息
+                    ID2goods_dict.Add(goods.GoodsID, goods);                    
                     if (!string.IsNullOrEmpty(goods.ParentID))
                     {
-                        child2parent.Add(goods.GoodsID, goods.ParentID);        // 子商品--父商品 
+                        child2parent.Add(goods.GoodsID, goods.ParentID);        
                     }
                 }
             }
@@ -102,14 +97,7 @@ namespace JuYuan.dal
             return child2parent;
         }
 
-        /// <summary>
-        /// 获取关联商品成本金额
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="num"></param>
-        /// <param name="child_id"></param>
-        /// <param name="split"></param>
-        /// <returns></returns>
+        
         public decimal GetGoodsCostAmount(string id, decimal num, string child_id, decimal split)
         {
             decimal cost = 0, p_num = 0, c_num = 0;
@@ -136,12 +124,7 @@ namespace JuYuan.dal
             return cost;
         }
 
-        /// <summary>
-        /// 普通商品成本金额 -- 非关联商品
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="num"></param>
-        /// <returns></returns>
+        
         public decimal GetGoodsCostAmount(string id, decimal num)
         {
             decimal cost = 0;
@@ -205,12 +188,6 @@ namespace JuYuan.dal
              return count;
         }
 
-        /// <summary>
-        /// 根据条件模糊查找
-        /// 2016-03-30添加zt(状态)过滤字段
-        /// </summary>
-        /// <param name="content"></param>
-        /// <returns></returns>
         public DataSet QueryBySearch(string content)
         {
             return ExecuteDataSet(@"select * from goods where product_type != 2 and sell_status != 1 and num >= 0 
@@ -231,13 +208,7 @@ namespace JuYuan.dal
             );
         }
 
-       
-        /// <summary>
-        /// 修改商品库存
-        /// </summary>
-        /// <param name="p"></param>
-        /// <param name="p_2"></param>
-        /// <returns></returns>
+     
         public int UpdateProSl(MySqlConnection conn, string goods_id, float cur_num)
         {
             return ExecuteNonQuery(conn, @"update goods set num = num - @num where goods_id= @id",
