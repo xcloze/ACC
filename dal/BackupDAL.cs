@@ -11,10 +11,7 @@ namespace JuYuan.dal
 {
     class BFDAL:MySqlUtils
     {
-        /// <summary>
-        /// 查询备份设置信息
-        /// </summary>
-        /// <returns></returns>
+        
         public BF Query()
         {
             DataTable table = ExecuteDataTable(@"select * from backup");
@@ -30,11 +27,6 @@ namespace JuYuan.dal
            return null;
         }
 
-        /// <summary>
-        /// 添加备份设置信息
-        /// </summary>
-        /// <param name="bf"></param>
-        /// <returns></returns>
         public int Add(BF bf)
         {
             return ExecuteNonQuery(@"insert into backup(auto,`interval`,save_path,save_days) values(@auto,@interval,@save_path,@save_days)",
@@ -44,10 +36,7 @@ namespace JuYuan.dal
             );
         }
 
-        /// <summary>
-        /// 删除所有备份设置信息
-        /// </summary>
-        /// <returns></returns>
+       
         public int DeleteAll()
         {
             return ExecuteNonQuery(@"delete from backup");
