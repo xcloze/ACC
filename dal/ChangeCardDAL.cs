@@ -8,9 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 制卡记录数据操作
-    /// </summary>
+    
     class ReplaceCardRecordDB : MySqlUtils
     {
         public int SaveReplaceCardRecord(ChangeCardRecord zkjl)
