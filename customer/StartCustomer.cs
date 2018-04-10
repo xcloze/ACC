@@ -32,9 +32,9 @@ namespace JuYuan.customer
             string fileName = exePath;
 
             Process proc = new Process();
-            proc.StartInfo.UseShellExecute = true;//是否使用操作系统外壳程序启动进程
+            proc.StartInfo.UseShellExecute = true;
 
-            proc.StartInfo.WorkingDirectory = filePath;//启动进程的初始目录
+            proc.StartInfo.WorkingDirectory = filePath;
             proc.StartInfo.FileName = fileName + ".exe";
             String f1 = filePath + "\\" + fileName + ".exe";
             if (File.Exists(f1))
