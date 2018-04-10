@@ -42,11 +42,7 @@ namespace JuYuan.dal
             return tjcode;
         }
         
-        /// <summary>
-        /// 更改天鉴码信息
-        /// </summary>
-        /// <param name="tjm"></param>
-        /// <returns></returns>
+     
         public int UpdateTraceCodeInfo(TJCode trace_info)
         {
             return ExecuteNonQuery(@"update trace_code set state = @status,goods_id = @goods_id,status = @status,code_count = @code_count,per_batch = @per_batch,deal_in_store = @deal_in_store where qr_code = @qr_code",
