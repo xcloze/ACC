@@ -12,17 +12,9 @@ using Model.model;
 namespace JuYuan.dal
 {
 
-
-    /// <summary>
-    /// 会员信息数据操作
-    /// </summary>
     class MemberDAL:MySqlUtils
     {
-        /// <summary>
-        /// 根据会员卡号|姓名|简名|电话号码查询会员信息
-        /// </summary>
-        /// <param name="hykh">会员卡号</param>
-        /// <returns></returns>
+      
         public List<MemberInfo> QueryBySearch(String content)
         {
             List<MemberInfo> meminfo_list = new List<MemberInfo>();
@@ -64,13 +56,7 @@ namespace JuYuan.dal
 
         }
        
-        /// <summary>
-        /// 根据会员卡号|姓名|简名|电话号码 以及 会员加入时间 查询会员信息 
-        /// </summary>
-        /// <param name="content"></param>
-        /// <param name="st"></param>
-        /// <param name="et"></param>
-        /// <returns></returns>
+   
         public List<MemberData> QueryBySearchAandTime(string content, bool isHasCard, string st, string et)
         {
 
@@ -207,12 +193,7 @@ namespace JuYuan.dal
             return data;
         }
 
-        
-        /// <summary>
-        /// 构建会员信息
-        /// </summary>
-        /// <param name="row"></param>
-        /// <returns></returns>
+      
         private Member BuildMemberInfo(DataRow row)
         {
             Member mem_info = new Member();
@@ -258,11 +239,7 @@ namespace JuYuan.dal
             return mem_info;
         }
 
-        /// <summary>
-        /// 根据会员卡号查询会员信息数据
-        /// </summary>
-        /// <param name="card_id">会员卡号</param>
-        /// <returns></returns>
+       
         public Member QueryByCardID(string card_id)
         {
             DataTable table = ExecuteDataTable(@"select * from member where card_id =@card_id or uuid=@id",
@@ -286,12 +263,7 @@ namespace JuYuan.dal
                );
         }
         
-        /// <summary>
-        /// 更新积分
-        /// </summary>
-        /// <param name="memberId"></param>
-        /// <param name="score"></param>
-        /// <returns></returns>
+     
         public int UpdateMemberScore(string memberId, int score)
         {
             return ExecuteNonQuery(@"update member set score=score+@integral where uuid=@id",
