@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace JuYuan.model
 {
-    /// <summary>
-    /// 出入库类型
-    /// </summary>
+   
     class OperationType
     {
         public GoodsInOutType ID { get; set; }
