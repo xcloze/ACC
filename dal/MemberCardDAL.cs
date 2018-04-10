@@ -10,16 +10,9 @@ using System.Data;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 会员储值卡数据操作
-    /// </summary>
+    
     class MemberCardDAL : MySqlUtils
     {
-        /// <summary>
-        /// 根据会员卡号删除会员储值卡信息
-        /// </summary>
-        /// <param name="card_id">会员卡号</param>
-        /// <returns></returns>
         public int DeleteValueCardByCardID(string card_id)
         {
             return ExecuteNonQuery(@"delete from value_card where card_id=@card_id or member_id=@id",
@@ -28,11 +21,6 @@ namespace JuYuan.dal
            );
         }
 
-        /// <summary>
-        /// 保存会员卡信息
-        /// </summary>
-        /// <param name="hyczk"></param>
-        /// <returns></returns>
         public int SaveMemberValueCardInfo(MemberCard mem_valuecard)
         {
             return ExecuteNonQuery(@"insert into value_card(member_id,card_id,state,join_dt,passwd,remain_value,comment,is_closing,closing_dt)
@@ -49,11 +37,6 @@ namespace JuYuan.dal
                 );
         }
 
-        /// <summary>
-        /// 根据会员卡号获取会员卡信息
-        /// </summary>
-        /// <param name="card_id">会员卡号</param>
-        /// <returns></returns>
         public MemberCard QueryMemValueCardByID(string card_id)
         {
             DataTable table = ExecuteDataTable(@"select * from value_card where card_id=@card_id", new MySqlParameter("@card_id", card_id));
@@ -76,10 +59,6 @@ namespace JuYuan.dal
         }
 
 
-        /// <summary>
-        /// 更新会员卡信息
-        /// </summary>
-        /// <param name="value_card"></param>
         public int UpdateMemberValueCardInfo(MemberCard value_card)
         {
             return ExecuteNonQuery(@"update value_card set state=@state,join_dt=@join_dt,passwd=@passwd,
