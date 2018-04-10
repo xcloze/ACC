@@ -17,7 +17,7 @@ using JuYuan.model;
 namespace JuYuan.controls
 {
     /// <summary>
-    /// StartEndDatePicker.xaml 的交互逻辑
+    /// StartEndDatePicker.xaml 
     /// </summary>
     public partial class StartEndDatePicker : UserControl
     {
@@ -150,10 +150,10 @@ namespace JuYuan.controls
 
         private void SetDisplayDate(DateTime start, DateTime end)
         {
-            string st = start.ToString("yyyy-MM-dd");//转换后时分秒都为0
+            string st = start.ToString("yyyy-MM-dd");
             DateTime s = DateTime.Parse(st);
 
-            string et = end.ToString("yyyy-MM-dd");//转换后时分秒都为0
+            string et = end.ToString("yyyy-MM-dd");
             DateTime e = DateTime.Parse(et).AddDays(1).AddSeconds(-1);
 
             
@@ -166,7 +166,7 @@ namespace JuYuan.controls
             this.EndDatePicker.SelectedDate = e;
             this.EndDatePicker.DisplayDate = e;
 
-            if (DateChangedHandler != null) // 执行回调函数
+            if (DateChangedHandler != null) 
                 DateChangedHandler();
 
             SelectedDateChanged(s, e);
@@ -201,7 +201,7 @@ namespace JuYuan.controls
         
 
         /// <summary>
-        /// 限制时间空间选择区间
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -219,7 +219,7 @@ namespace JuYuan.controls
                 DateTime end = this.EndDatePicker.SelectedDate == null ? this.EndDatePicker.DisplayDate : (DateTime)this.EndDatePicker.SelectedDate;
                 this.StartDatePicker.BlackoutDates.Add(new CalendarDateRange(end.AddDays(1), rmt_time));
 
-                if (DateChangedHandler != null) // 执行回调函数
+                if (DateChangedHandler != null) 
                     DateChangedHandler();
             }
             catch (Exception ex) { }
@@ -233,7 +233,7 @@ namespace JuYuan.controls
                 DateTime start = this.StartDatePicker.SelectedDate == null ? this.StartDatePicker.DisplayDate : (DateTime)this.StartDatePicker.SelectedDate;
                 this.EndDatePicker.BlackoutDates.Add(new CalendarDateRange(ori_time, start.AddDays(-1)));
 
-                if (DateChangedHandler != null) // 执行回调函数
+                if (DateChangedHandler != null) 
                     DateChangedHandler();
             }
             catch (Exception ex) { }
