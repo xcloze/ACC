@@ -11,17 +11,11 @@ using Model.model;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 消费商品数据处理
-    /// </summary>
+    
     class ConsumeMerchDAL : MySqlUtils
     {
        
-        /// <summary>
-        /// 根据消费流水号查询消费的商品信息
-        /// </summary>
-        /// <param name="consume_id"></param>
-        /// <returns></returns>
+       
         public List<ConsumeMerchData> QueryGoodsByConsumeID2(string consume_id)
         {
             List<ConsumeMerchData> consume_list = new List<ConsumeMerchData>();
@@ -50,11 +44,7 @@ namespace JuYuan.dal
         }
         
 
-        /// <summary>
-        /// 组建订单商品数据
-        /// </summary>
-        /// <param name="dr"></param>
-        /// <returns></returns>
+  
         private ConsumeMerchData BuildMerchData(DataRow dr, DataRowCollection goodsReturned)
         {
             ConsumeMerchData data = new ConsumeMerchData();
@@ -79,7 +69,6 @@ namespace JuYuan.dal
             if (!string.IsNullOrEmpty(dr["goods_id"].ToString()))
                 data.GoodsID = dr["goods_id"].ToString();
 
-            // 计算已退货的数量
             data.NumReturned = 0;
             for (int i = 0; i < goodsReturned.Count; ++i)
             {
@@ -89,7 +78,7 @@ namespace JuYuan.dal
                     data.NumReturned += (int)(float)row["num"];
                 }
             }
-            // 可退的数量和金额不能小于0
+         
             data.NumRemain = (int)data.Amount - data.NumReturned;
             if (data.NumRemain < 0)
             {
