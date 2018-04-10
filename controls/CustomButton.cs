@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 /// <summary>
-    /// FButton.xaml 的交互逻辑
+    /// FButton.xaml
     /// </summary>
 namespace CostomButton.Controls
 {
@@ -13,7 +13,7 @@ namespace CostomButton.Controls
         public static readonly DependencyProperty PressedBackgroundProperty =
             DependencyProperty.Register("PressedBackground", typeof(Brush), typeof(FButton), new PropertyMetadata(Brushes.DarkBlue));
         /// <summary>
-        /// 鼠标按下背景样式
+        /// 
         /// </summary>
         public Brush PressedBackground
         {
@@ -24,7 +24,7 @@ namespace CostomButton.Controls
         public static readonly DependencyProperty PressedForegroundProperty =
             DependencyProperty.Register("PressedForeground", typeof(Brush), typeof(FButton), new PropertyMetadata(Brushes.White));
         /// <summary>
-        /// 鼠标按下前景样式（图标、文字）
+        /// 
         /// </summary>
         public Brush PressedForeground
         {
@@ -35,7 +35,7 @@ namespace CostomButton.Controls
         public static readonly DependencyProperty MouseOverBackgroundProperty =
             DependencyProperty.Register("MouseOverBackground", typeof(Brush), typeof(FButton), new PropertyMetadata(Brushes.RoyalBlue));
         /// <summary>
-        /// 鼠标进入背景样式
+        ///
         /// </summary>
         public Brush MouseOverBackground
         {
@@ -46,7 +46,7 @@ namespace CostomButton.Controls
         public static readonly DependencyProperty MouseOverForegroundProperty =
             DependencyProperty.Register("MouseOverForeground", typeof(Brush), typeof(FButton), new PropertyMetadata(Brushes.White));
         /// <summary>
-        /// 鼠标进入前景样式
+        /// 
         /// </summary>
         public Brush MouseOverForeground
         {
@@ -57,7 +57,7 @@ namespace CostomButton.Controls
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(FButton), new PropertyMetadata(new CornerRadius(0)));
         /// <summary>
-        /// 按钮圆角大小,左上，右上，右下，左下
+        /// 
         /// </summary>
         public CornerRadius CornerRadius
         {
