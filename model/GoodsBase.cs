@@ -114,18 +114,14 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 库存成本总价值
-        /// </summary>
+      
         public decimal CostAmount
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// 库存预期销售总金额
-        /// </summary>
+       
         public decimal ExpectSellAmount
         {
             get
