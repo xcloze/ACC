@@ -11,7 +11,7 @@ using TCPClientAndServer.TcpClient;
 namespace JuYuan.dal
 {
     /// <summary>
-    /// 操作员权限
+    /// 
     /// </summary>
     class AuthorityDAL : MySqlUtils
     {
