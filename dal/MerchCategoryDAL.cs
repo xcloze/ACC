@@ -8,18 +8,12 @@ using System.Data.SqlClient;
 using JuYuan.utils;
 using MySql.Data.MySqlClient;
 using mysqlApp.utils;
-/**
- * 商品类别数据库操作类
- */ 
+
 namespace JuYuan.dal
 {
     class MerchCategoryDAL : MySqlUtils
     {
-        
-        /// <summary>
-        /// 查询全部类型
-        /// </summary>
-        /// <returns></returns>
+       
         public List<GoodsCategory> SelectAll()
         {
             List<GoodsCategory> list = new List<GoodsCategory>();
