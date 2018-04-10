@@ -12,18 +12,11 @@ using Model.model;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 失败消费信息数据操作
-    /// </summary>
+   
     class FailedSalesDAL : MySqlUtils
     {
         
-        /// <summary>
-        /// 根据会员id和 消费单号模糊查询会员的消费记录 （默认查询当前一个月的订单）
-        /// </summary>
-        /// <param name="memberID"></param>
-        /// <param name="consumeID"></param>
-        /// <returns></returns>
+        
         public List<ConsumeOrderData> QueryFailedConsumeInfo(string memberID)
         {
             List<ConsumeOrderData> order_list = new List<ConsumeOrderData>();
@@ -124,11 +117,7 @@ namespace JuYuan.dal
             return data;
         }
       
-        /// <summary>
-        /// 根据消费流水号查询消费的商品信息
-        /// </summary>
-        /// <param name="consume_id"></param>
-        /// <returns></returns>
+    
         public List<ConsumeMerchData> QueryGoodsByConsumeID(string consume_id)
         {
             List<ConsumeMerchData> consume_list = new List<ConsumeMerchData>();
