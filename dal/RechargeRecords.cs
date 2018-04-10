@@ -9,17 +9,11 @@ using System.Data;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 会员缴费数据操作
-    /// </summary>
+    
     class RechargeRecordsDAL : MySqlUtils
     {
        
-        /// <summary>
-        /// 保存会员交费信息
-        /// </summary>
-        /// <param name="hyjf"></param>
-        /// <returns></returns>
+      
         public int SaveMemberPaymentInfo(RechargeRecords payment)
         {
             return ExecuteNonQuery(@"insert into member_recharge(uuid,card_id,recharge_value,dt,promotion_value,operator_id,comment,pay_value,from_cash,from_value_card,from_bank_card,from_voucher)
