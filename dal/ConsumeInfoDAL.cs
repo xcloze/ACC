@@ -11,18 +11,11 @@ using Model.model;
 
 namespace JuYuan.dal
 {
-    /// <summary>
-    /// 消费信息数据操作
-    /// </summary>
+   
     class ConsumeInfoDB : MySqlUtils
     {
         
-        /// <summary>
-        /// 根据会员id和 消费单号模糊查询会员的消费记录 （默认查询当前一个月的订单）
-        /// </summary>
-        /// <param name="memberID"></param>
-        /// <param name="consumeID"></param>
-        /// <returns></returns>
+      
         public List<ConsumeOrderData> QueryConsumeInfo(string memberID, string consumeID, DateTime st, DateTime et)
         {
             List<ConsumeOrderData> order_list = new List<ConsumeOrderData>();
@@ -78,14 +71,7 @@ namespace JuYuan.dal
             return consume_info;
         }
 
-        /// <summary>
-        /// 根据类别id、日期、商品名称查询消费明细记录
-        /// </summary>
-        /// <param name="ksrq"></param>
-        /// <param name="jsrq"></param>
-        /// <param name="sslb"></param>
-        /// <param name="spmc"></param>
-        /// <returns></returns>
+       
         public List<DataReportMerchandiseData> QueryComsumeInfByLbGoodsInfo(string begin_date, string end_date, 
             string consume_type, string goods_name, string operator_name)
         {
@@ -132,15 +118,7 @@ namespace JuYuan.dal
             return report_data_list;
         }
 
-        /// <summary>
-        /// 统计消费信息
-        /// </summary>
-        /// <param name="begin_date"></param>
-        /// <param name="end_date"></param>
-        /// <param name="mem_type"></param>
-        /// <param name="mem_id"></param>
-        /// <param name="opt_name"></param>
-        /// <returns></returns>
+       
 
         public List<ConsumeOrderData> QueryConsumeInfByMemInfo(string begin_date, string end_date, string mem_type, string mem_id, string opt_name)
         {
@@ -291,7 +269,7 @@ namespace JuYuan.dal
                 data.Uint = (string)dr["units"];
             if (!string.IsNullOrEmpty(dr["price"].ToString()))
                 data.UintPrice = (decimal)dr["price"];
-            if (!string.IsNullOrEmpty(dr["category_name"].ToString())) // todo 类别名称
+            if (!string.IsNullOrEmpty(dr["category_name"].ToString())) 
                 data.Category = (string)dr["category_name"];
             if (!string.IsNullOrEmpty(dr["dt"].ToString()))
                 data.ConsumeDate = (DateTime)dr["dt"];
