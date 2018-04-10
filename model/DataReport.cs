@@ -186,45 +186,35 @@ namespace JuYuan.model
     }
     class VIPConsumeGoods : DataReportConsumeGoods
     {
-        /// <summary>
-        /// VIP客户名称
-        /// </summary>
+       
         public string VIPName
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// 商品条码
-        /// </summary>
+        
         public string Ean
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// 原单价
-        /// </summary>
+       
         public decimal Price
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// VIP单价
-        /// </summary>
+       
         public decimal VIPPrice
         {
             get;
             set;
         }
 
-        /// <summary>
-        /// 让利金额（Price - VIPPrice）* Num
-        /// </summary>
+        
         public decimal SurrenderProfits
         {
             get;
@@ -234,10 +224,7 @@ namespace JuYuan.model
 
     public class StockSellInventory
     {
-        /// <summary>
-        /// 物品基本信息
-        /// </summary>
-
+       
         public string GoodsID
         {
             get;
@@ -270,9 +257,7 @@ namespace JuYuan.model
 
         public string CategoryName { get; set; }
 
-        /// <summary>
-        /// 期初
-        /// </summary>
+      
         public decimal BeginNum
         {
             get;
@@ -291,9 +276,7 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 入库
-        /// </summary>
+        
         public decimal InNum
         {
             get;
@@ -323,9 +306,7 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 销售
-        /// </summary>
+   
         public decimal SellNum
         {
             get;
@@ -369,9 +350,7 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 调入
-        /// </summary>
+     
         public decimal CallInNum
         {
             get;
@@ -384,9 +363,7 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 调出
-        /// </summary>
+      
         public decimal CallOutNum
         {
             get;
@@ -399,9 +376,7 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 损益
-        /// </summary>
+        
         public decimal ProfitLossNum
         {
             get;
@@ -414,9 +389,6 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 领用
-        /// </summary>
         public decimal ReceptionNum
         {
             get;
@@ -429,9 +401,6 @@ namespace JuYuan.model
             set;
         }
 
-        /// <summary>
-        /// 期末
-        /// </summary>
         public decimal EndPeriodNum
         {
             get;
