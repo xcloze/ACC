@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace JuYuan.model
 {
-    /// <summary>
-    /// 订单来源
-    /// </summary>
+
     public class OrderSrcData
     {
 
@@ -24,17 +22,13 @@ namespace JuYuan.model
             this.SrcType = or.SrcType;
         }
 
-        /// <summary>
-        /// 订单来源 - 名称 
-        /// </summary>
+     
         public string SrcName
         {
             get { return _srcName; }
             set { _srcName = value; }
         }
-        /// <summary>
-        /// 订单来源 - 类型 （0 - 门店销售， 1 - 网络订单）
-        /// </summary>
+  
         public int SrcType
         {
             get { return _srcType; }
@@ -46,9 +40,7 @@ namespace JuYuan.model
         private int _srcType = 0;
     }
 
-    /// <summary>
-    /// 支付方式
-    /// </summary>
+    
     public class PayModeData
     {
         public void SetValue(PayModeData data)
@@ -75,9 +67,6 @@ namespace JuYuan.model
 
     }
 
-    /// <summary>
-    /// 退货方式
-    /// </summary>
     public class ReturnModeData
     {
         public void SetValue(ReturnModeData data)
@@ -102,9 +91,7 @@ namespace JuYuan.model
         private int _mode = 0;
     }
 
-    /// <summary>
-    /// 查询时间类型（当天，昨天，本月，上月，今年，去年，全部）
-    /// </summary>
+ 
     public class TimeTypeData
     {
         public void SetValue(TimeTypeData data)
@@ -130,9 +117,7 @@ namespace JuYuan.model
         private int _type = 0;
     }
 
-    /// <summary>
-    /// 验证密码的方式
-    /// </summary>
+  
     public class ValidatePwdTypeData
     {
         public void SetValue(ValidatePwdTypeData data)
@@ -157,9 +142,7 @@ namespace JuYuan.model
         private int _type = 0;
     }
 
-    /// <summary>
-    /// 储值卡状态
-    /// </summary>
+    
     public class CardStatusData
     {
         public void SetValue(CardStatusData data)
@@ -184,9 +167,7 @@ namespace JuYuan.model
         private int _status = 0;
     }
 
-    /// <summary>
-    /// 充值活动
-    /// </summary>
+  
     public class RechargeActData
     {
         public void SetValue(RechargeActData data)
@@ -270,22 +251,10 @@ namespace JuYuan.model
             set { _endDate = value; }
         }
 
-        private string _id = "";            // 活动ID
-        private string _actNo = "";         // 活动编号
-        private string _name = "";          // 活动名称
-        private string _instruction = "";   // 活动描述
-        private int _actModeID = 0;         // 活动类型ID
-        private string _actModeName = "";   // 活动类型
-        private decimal _recharge = 0;      // 充值(消费)金额
-        private decimal _receive = 0;       // 所得(转换)金额
-        private int _status = 0;            // 活动状态
-        private DateTime _startDate;        // 活动开始时间
-        private DateTime _endDate;          // 活动结束时间
+        
     }
 
-    /// <summary>
-    /// 性别
-    /// </summary>
+  
     public class SexData
     {
         public void SetValue(SexData data)
@@ -310,9 +279,7 @@ namespace JuYuan.model
         private int _type = 0;
     }
 
-    /// <summary>
-    /// 证件类型
-    /// </summary>
+   
     public class CredentialsData
     {
         public void SetValue(CredentialsData data)
@@ -345,9 +312,6 @@ namespace JuYuan.model
         private string _no = "";
     }
 
-    /// <summary>
-    /// 收银员
-    /// </summary>
     public class OperatorData
     {
         public void SetValue(OperatorData data)
@@ -370,10 +334,7 @@ namespace JuYuan.model
         private string _name = "";
         private string _id = "";
     }
-    
-    /// <summary>
-    /// 出入库操作类型
-    /// </summary>
+  
     public class OperatType
     {
         public int ID
@@ -389,9 +350,7 @@ namespace JuYuan.model
         }
     }
 
-    /// <summary>
-    /// 打印方式
-    /// </summary>
+
     public class PrintMode
     {
         public void SetValue(PrintMode data)
@@ -416,9 +375,6 @@ namespace JuYuan.model
         private string _name = "";
     }
 
-    /// <summary>
-    /// 打印机信息
-    /// </summary>
     public class PrinterData
     {
         public void SetValue(PrinterData data)
