@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Config>
   <ControlList type="System.Windows.Forms.Panel" name="panel1" father="" use="True" x="103" y="30" width="801" height="600">
     <Controls type="System.Windows.Forms.Panel" name="panel_ad" father="panel1" use="True" x="0" y="0" width="400" height="300">
