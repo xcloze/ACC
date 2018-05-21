@@ -44,7 +44,6 @@ namespace JuYuan.dal
         {
             PutUpOrderRecord data = new PutUpOrderRecord();
 
-            data.ID = (string)dr["id"];
             if (!string.IsNullOrEmpty(dr["member_id"].ToString()))
                 data.MemberID = (string)dr["member_id"];
             if (!string.IsNullOrEmpty(dr["state"].ToString()))
